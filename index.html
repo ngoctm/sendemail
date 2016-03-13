@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>User SignUp</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<style>
+			#container {
+				margin: auto;
+				width: 50%;
+				padding: 20px;				
+			}
+
+			#content {
+				margin: auto;
+				width: 50%;
+				margin-top: 20%;
+				padding: 20px;				
+			}
+
+			#content input {
+				border: 2px solid gray;
+			}
+
+			.username, .email {
+				padding: 20px;
+			}
+
+			.lblUsername, .lblEmail {
+				font-weight: bold;
+			}
+
+			.btnSubmit {
+				margin-left: 50px;
+				padding: 5px 15px;
+				font-weight: bold;
+			}
+
+			#msgUsername, #msgEmail {
+				color: red;
+				font-weight: bold;
+			}
+		</style>
+		
+		<script>
+			function validateForm() {
+				var x = document.forms["myForm"]["txtUsername"].value;
+				if (x == null || x == "") {
+					document.getElementById("msgUsername").innerHTML = "This field is required!";					
+					return false;
+				} else {
+					document.getElementById("msgUsername").innerHTML = "";	
+				}
+				
+				var y = document.forms["myForm"]["txtEmail"].value;
+				if (y == null || y == "") {
+					document.getElementById("msgEmail").innerHTML = "This field is required!";					
+					return false;
+				} 
+			}		
+		</script>
+	</head>
+	
+	<body>
+		<div id="container">
+			<div id="content">
+				<form name="myForm" action="http://127.0.0.1:8081/messages/send-template.json" method="post" id="loginForm">
+				<div class="username">
+					<span class="lblUsername">Username*:</span><br/>
+					<span id="inputUsername">
+						<input type="text" name="txtUsername">
+						<p id="msgUsername"></p>				
+					</span>
+				</div>
+				<div class="email">
+					<span class="lblEmail">Email*:</span><br/>
+					<span id="inputEmail">
+						<input type="text" name="txtEmail">
+						<p id="msgEmail"></p>	
+					</span>
+				</div>		
+				<button type="submit" form="loginForm" value="Submit" class="btnSubmit" onclick="return validateForm()">Send</button>
+				</form>
+				
+			</div>
+		</div>
+	</body>
+</html>

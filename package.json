@@ -1,0 +1,18 @@
+{
+  "name": "ngoc",
+  "version": "1.0.0",
+  "description": "send email to user",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ngoctm",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "fs": "0.0.2",
+    "mandrill-api": "^1.0.45",
+    "url": "^0.11.0"
+  }
+}
